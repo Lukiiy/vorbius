@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>🔊 Vorbius</title>
+    <meta name="description" content="A generic music file to ogg converter!">
+    <link rel="author" href="Lukiiy">
+</head>
+<body>
+    <h1>Vorbius</h1>
+
+    <input id="file" type="file" accept="audio/mpeg" />
+    <div>
+        <label>Quality: <input id="vbr" type="number" value="3.0" min="-1" max="10" /> <small>(lower = small file, default is 3)</small></label>
+        <label>Resample (Hz): <select id="sr">
+            <option value="48000">48000</option>
+            <option value="44100" selected>44100 (def)</option>
+            <option value="32000">32000</option>
+            <option value="24000">24000</option>
+            <option value="22050">22050</option>
+            <option value="16000">16000</option>
+            <option value="11025">11025</option>
+            <option value="8000">8000</option>
+        </select></label>
+        <label><input id="mono" type="checkbox" /> Mono Downmix</label>
+    </div>
+    <button id="convert">Convert</button>
+
+    <h5 id="status"></h5>
+    <a id="download" style="display:none"></a>
+    <small><a href="https://github.com/Lukiiy/Vorbius">Source Code</a></small>
+
+    <script src="https://unpkg.com/wasm-media-encoders/dist/umd/WasmMediaEncoder.min.js"></script>
+    <script src="app.js" defer></script>
+</body>
+</html>
