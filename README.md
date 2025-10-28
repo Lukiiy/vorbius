@@ -1,2 +1,3 @@
-# vorbious
-Converts MP3 files and others to Vorbis OGG files. With some options :)
+# [Vorbius](https://lukiiy.github.io/vorbius)
+
+Converts common music file formats to Vorbis OGG files.
