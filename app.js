@@ -117,16 +117,16 @@ async function convert() {
     let off = 0;
 
     while (off < total) {
-        const n = Math.min(frame, total - off);
+        const frameCount = Math.min(frame, total - off);
         const slice = [];
 
-        for (let c = 0; c < channels; c++) slice.push(channelData[c].subarray(off, off + n));
+        for (let c = 0; c < channels; c++) slice.push(channelData[c].subarray(off, off + frameCount));
 
         const out = encoder.encode(slice);
 
         if (out && out.length) pieces.push(new Uint8Array(out));
 
-        off += n;
+        off += frameCount;
 
         statusMark.textContent = `Encoding ${Math.round(off / total * 100)}%`;
         await new Promise(r => setTimeout(r, 0));
