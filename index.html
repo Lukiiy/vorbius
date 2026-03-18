@@ -12,7 +12,9 @@
 <body>
     <h1>Vorbius</h1>
 
-    <input id="file" type="file" accept="audio/mpeg" />
+    <p>Convert music files to .ogg!</p>
+
+    <input id="file" type="file" accept="audio/mpeg, audio/wav, .mp3, .wav" />
     <div>
         <label>Quality: <input id="vbr" type="number" value="3.0" min="-1" max="10" /> <small>(lower = small file, default is 3)</small></label>
         <label>Resample (Hz): <select id="sr">
