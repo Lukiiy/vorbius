@@ -57,6 +57,7 @@ async function convert() {
         return;
     }
 
+    dl.style.display = "none";
     statusMark.textContent = "Decoding...";
 
     let audio;
@@ -139,7 +140,7 @@ async function convert() {
 
     dl.href = URL.createObjectURL(blob);
     dl.download = file.name.replace(/\.[^.]+$/, "") + ".ogg";
-    dl.style.display = "inline";
+    dl.style.display = "";
     dl.textContent = "Download";
 
     statusMark.textContent = "Done";
