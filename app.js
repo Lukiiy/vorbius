@@ -135,7 +135,7 @@ async function convert() {
     const last = encoder.finalize();
     if (last && last.length) pieces.push(new Uint8Array(last));
 
-    const blob = new Blob([outFile.buffer], { type: "audio/ogg; codecs = vorbis" });
+    const blob = new Blob([concatChunks(pieces)], { type: "audio/ogg; codecs = vorbis" });
 
     dl.href = URL.createObjectURL(blob);
     dl.download = file.name.replace(/\.[^.]+$/, "") + ".ogg";
